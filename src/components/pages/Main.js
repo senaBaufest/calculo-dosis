@@ -1,4 +1,4 @@
-import React, { useState,  } from 'react';
+import React, { useState, } from 'react';
 import Swal from 'sweetalert2';
 const Main = () => {
     const [miligramos, setMiligramos] = useState(null);
@@ -20,21 +20,21 @@ const Main = () => {
                 icon: 'warning',
                 title: 'Oops...',
                 text: 'Asegurese de completar todos los campos',
-              })
-        }else{
-        const calculate = kg * mililitros * conversion / miligramos;
-        if (isNaN(calculate)) {
-           setError(true); 
-           Swal.fire({
-            icon: 'warning',
-            title: 'Oops...',
-            text: 'Asegurese de introducir solo datos numéricos',
-          })
-        }else{
-            setError(false);
-            setDosis(calculate)
+            })
+        } else {
+            const calculate = kg * mililitros * conversion / miligramos;
+            if (isNaN(calculate)) {
+                setError(true);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'Asegurese de introducir solo datos numéricos',
+                })
+            } else {
+                setError(false);
+                setDosis(calculate)
 
-        }
+            }
         }
         event.preventDefault();
 
